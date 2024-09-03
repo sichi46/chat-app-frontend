@@ -3,7 +3,7 @@ import GenderCheckBox from "../components/signup/gender-checkbox";
 const SignUp = () => {
   return (
     <div className="flex flex-col items-center justify-center min-w-96 mx-auto">
-      <div className="w-full p-6 rounded-lg shadow-md bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-lg background-opacity-0">
+      <div className="w-full p-6 bg-gray-700 rounded-md bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-0">
         <h1 className="text-3xl font-semibold text-center text-gray-300">
           Sign Up <span className="text-blue-500">ChatApp</span>
         </h1>
@@ -44,11 +44,11 @@ const SignUp = () => {
             </label>
             <input
               type="password"
-              placeholder="Confirm Passwword"
+              placeholder="Confirm Password"
               className="w-full input input-bordered h-10"
             />
           </div>
-          <GenderCheckBox />{" "}
+          <GenderCheckBox />
           <a href="#" className="text-sm hover:underline hover:text-blue-600">
             Already have an account
           </a>
