@@ -1,17 +1,13 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import "./App.css";
+import LogIn from "./pages/log-in";
+import SignUp from "./pages/sign-up";
 
-function App() {
-  const [count, setCount] = useState(0);
-
+const App = () => {
   return (
-    <>
-      <h1 className="text-3xl font-bold underline">Hello World</h1>
-      <button className="btn btn-primary">My Button</button>
-    </>
+    <div className="p-4 h-screen flex items-center">
+      {/* <LogIn /> */}
+      <SignUp />
+    </div>
   );
-}
+};
 
 export default App;
