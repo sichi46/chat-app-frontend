@@ -3,7 +3,7 @@ import Messages from "./messages";
 import NoChatSelected from "./no-chat -selected";
 
 const MessageContainer = () => {
-  const noChatSelected = false;
+  const noChatSelected = true;
   return (
     <div className=" md:min-w-[450px] flex flex-col">
       {noChatSelected ? (
