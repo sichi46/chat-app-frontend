@@ -3,6 +3,7 @@ import {
   Dispatch,
   ReactNode,
   SetStateAction,
+  useContext,
   useEffect,
   useState,
 } from "react";
@@ -24,6 +25,10 @@ const AuthContext = createContext<{
   setAuthUser: () => {},
   isLoading: true,
 });
+
+export const useAuthContext = () => {
+  return useContext(AuthContext);
+};
 
 export const AuthContextProvider = ({ children }: { children: ReactNode }) => {
   const [authUser, setAuthUser] = useState<AuthUserType | null>(null);
