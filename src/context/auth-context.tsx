@@ -27,7 +27,7 @@ const AuthContext = createContext<{
 
 export const AuthContextProvider = ({ children }: { children: ReactNode }) => {
   const [authUser, setAuthUser] = useState<AuthUserType | null>(null);
-  const [isLoading, SetIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
 
   //Check if user is logged in
   useEffect(() => {
@@ -42,7 +42,7 @@ export const AuthContextProvider = ({ children }: { children: ReactNode }) => {
       } catch (error) {
         console.error(error);
       } finally {
-        SetIsLoading(false);
+        setIsLoading(false);
       }
     };
     fetchAuthUser();
