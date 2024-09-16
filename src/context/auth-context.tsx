@@ -7,6 +7,9 @@ import {
   useEffect,
   useState,
 } from "react";
+import { API } from "../api";
+import toast from "react-hot-toast";
+import axios from "axios";
 
 type AuthUserType = {
   id: string;
@@ -33,19 +36,19 @@ export const useAuthContext = () => {
 export const AuthContextProvider = ({ children }: { children: ReactNode }) => {
   const [authUser, setAuthUser] = useState<AuthUserType | null>(null);
   const [isLoading, setIsLoading] = useState(true);
+  const token = localStorage.getItem("token");
 
   //Check if user is logged in
   useEffect(() => {
     const fetchAuthUser = async () => {
       try {
-        const res = await fetch("/authentication/me");
-        const data = await res.json();
-        if (!res.ok) {
-          throw new Error(data.error);
-        }
+        const res = await axios.post(`${API}/authentication/me`, {
+          token,
+        });
+        const data = res.data;
         setAuthUser(data);
-      } catch (error) {
-        console.error(error);
+      } catch (error: any) {
+        toast.error(error.message);
       } finally {
         setIsLoading(false);
       }
