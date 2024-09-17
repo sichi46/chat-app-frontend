@@ -1,12 +1,14 @@
+import useConversation from "../../zustand/use-conversation";
 import MessageInput from "./message-input";
 import Messages from "./messages";
 import NoChatSelected from "./no-chat -selected";
 
 const MessageContainer = () => {
-  const noChatSelected = true;
+  // const noChatSelected = false;
+  const { selectedConversation } = useConversation();
   return (
     <div className=" md:min-w-[450px] flex flex-col">
-      {noChatSelected ? (
+      {!selectedConversation ? (
         <NoChatSelected />
       ) : (
         <>
